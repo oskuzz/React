@@ -1,0 +1,29 @@
+﻿.register-form{
+
+}
+
+label, input, button, .header{
+    margin-left: 35%;
+}
+button {
+    margin-top: 5px;
+    border-radius: 5px;
+    width: 75px;
+    height: 35px;
+    border-color: #2d7eff;
+    background-color: #2577f9;
+}
+input{
+    margin-bottom:10px;
+    border-radius: 5px;
+    width: 300px;
+    height:35px;
+}
+.link{
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.header{
+    margin-bottom: 25px;
+}
+
