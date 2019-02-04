@@ -46,7 +46,7 @@ export class Register extends Component {
                     <input type="text" name="pNumber" placeholder="Phonenumber" value={this.state.pNumber} onChange={this.getPhoneNumber} />
                     <input type="text" name="uName" placeholder="Username" value={this.state.uName} onChange={this.getUserName} />
                     <input type="Password" name="password" placeholder="Password" value={this.state.pw} onChange={this.getPassword} />
-                    <button onClick={this.register_confirmation}>Register</button>
+                    <button onClick={this.print}>Register</button>
                 
                 <a class="link" href="/login">Do you have existing account?</a>
             </div>
