@@ -12,7 +12,7 @@ namespace WebApplication2.Data
     {
         public string ConnectionString = @"Server = LAPTOP-JHHCFN8D; Database = React; Trusted_Connection = true";
 
-        public DbSet<User> User { get; set; }
+        public DbSet<Customer> Customer { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -22,11 +22,14 @@ namespace WebApplication2.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<User>()
-                .ToTable("User", schema: "Service");
+            modelBuilder.Entity<Customer>()
+                .ToTable("Customer", schema: "Service");
 
-            modelBuilder.Entity<User>()
-                .HasKey(u => u.UserID);
+            modelBuilder.Entity<Customer>()
+                .HasKey(c => c.CustomerID);
+            modelBuilder.Entity<Customer>()
+                .HasData(new Customer { CustomerID=1, FirstName="asd", LastName="asd", Email="asd@asd.asd", ProneNumber="123456789", UserName="asd", Password="asdasd" });
+            
         }
     }
 }

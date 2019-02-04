@@ -9,8 +9,8 @@ using WebApplication2.Data;
 namespace WebApplication2.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190130134226_kuka_tama")]
-    partial class kuka_tama
+    [Migration("20190201135400_seed")]
+    partial class seed
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,9 +20,9 @@ namespace WebApplication2.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("WebApplication2.Tables.User", b =>
+            modelBuilder.Entity("WebApplication2.Tables.Customer", b =>
                 {
-                    b.Property<int>("UserID")
+                    b.Property<int>("CustomerID")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -38,9 +38,9 @@ namespace WebApplication2.Migrations
 
                     b.Property<string>("UserName");
 
-                    b.HasKey("UserID");
+                    b.HasKey("CustomerID");
 
-                    b.ToTable("User","Service");
+                    b.ToTable("Customer","Service");
                 });
 #pragma warning restore 612, 618
         }

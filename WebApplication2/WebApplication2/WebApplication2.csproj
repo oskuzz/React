@@ -21,15 +21,6 @@
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Remove="Migrations\20190130103543_structure.cs" />
-    <Compile Remove="Migrations\20190130103543_structure.Designer.cs" />
-    <Compile Remove="Migrations\20190130134145_seed.cs" />
-    <Compile Remove="Migrations\20190130134145_seed.Designer.cs" />
-    <Compile Remove="Migrations\20190130134207_table.cs" />
-    <Compile Remove="Migrations\20190130134207_table.Designer.cs" />
-  </ItemGroup>
-
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">

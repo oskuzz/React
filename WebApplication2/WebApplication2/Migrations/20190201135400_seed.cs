@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WebApplication2.Migrations
 {
-    public partial class kuka_tama : Migration
+    public partial class seed : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,11 +11,11 @@ namespace WebApplication2.Migrations
                 name: "Service");
 
             migrationBuilder.CreateTable(
-                name: "User",
+                name: "Customer",
                 schema: "Service",
                 columns: table => new
                 {
-                    UserID = table.Column<int>(nullable: false)
+                    CustomerID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     UserName = table.Column<string>(nullable: true),
                     Password = table.Column<string>(nullable: true),
@@ -26,14 +26,14 @@ namespace WebApplication2.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_User", x => x.UserID);
+                    table.PrimaryKey("PK_Customer", x => x.CustomerID);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "User",
+                name: "Customer",
                 schema: "Service");
         }
     }

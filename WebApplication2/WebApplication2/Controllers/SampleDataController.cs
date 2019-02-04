@@ -3,16 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using WebApplication2.Data;
+using WebApplication2.Tables;
 
 namespace WebApplication2.Controllers
 {
     [Route("api/[controller]")]
     public class SampleDataController : Controller
     {
+        ApplicationDbContext context = new ApplicationDbContext();
         private static string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
+
+        [HttpGet("[action]")]
+        public List<Customer> Customer()
+        {
+            return context.Customer.Where(c => c.CustomerID == 1).ToList();
+        }
 
         [HttpGet("[action]")]
         public IEnumerable<WeatherForecast> WeatherForecasts()
