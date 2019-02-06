@@ -9,8 +9,8 @@ using WebApplication2.Data;
 namespace WebApplication2.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190201135400_seed")]
-    partial class seed
+    [Migration("20190206121646_seed2")]
+    partial class seed2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,13 +34,35 @@ namespace WebApplication2.Migrations
 
                     b.Property<string>("Password");
 
-                    b.Property<string>("ProneNumber");
+                    b.Property<string>("PhoneNumber");
 
                     b.Property<string>("UserName");
 
                     b.HasKey("CustomerID");
 
                     b.ToTable("Customer","Service");
+
+                    b.HasData(
+                        new
+                        {
+                            CustomerID = 1,
+                            Email = "asd@asd.asd",
+                            FirstName = "asd",
+                            LastName = "asd",
+                            Password = "asdasd",
+                            PhoneNumber = "123456789",
+                            UserName = "asd"
+                        },
+                        new
+                        {
+                            CustomerID = 2,
+                            Email = "asdf@asd.asd",
+                            FirstName = "asdf",
+                            LastName = "asdf",
+                            Password = "asdasdasd",
+                            PhoneNumber = "123456789",
+                            UserName = "asdf"
+                        });
                 });
 #pragma warning restore 612, 618
         }

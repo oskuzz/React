@@ -32,7 +32,7 @@ namespace WebApplication2.Migrations
 
                     b.Property<string>("Password");
 
-                    b.Property<string>("ProneNumber");
+                    b.Property<string>("PhoneNumber");
 
                     b.Property<string>("UserName");
 
@@ -48,8 +48,18 @@ namespace WebApplication2.Migrations
                             FirstName = "asd",
                             LastName = "asd",
                             Password = "asdasd",
-                            ProneNumber = "123456789",
+                            PhoneNumber = "123456789",
                             UserName = "asd"
+                        },
+                        new
+                        {
+                            CustomerID = 2,
+                            Email = "asdf@asd.asd",
+                            FirstName = "asdf",
+                            LastName = "asdf",
+                            Password = "asdasdasd",
+                            PhoneNumber = "123456789",
+                            UserName = "asdf"
                         });
                 });
 #pragma warning restore 612, 618

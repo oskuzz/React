@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -20,7 +21,15 @@ namespace WebApplication2.Controllers
         [HttpGet("[action]")]
         public List<Customer> Customer()
         {
-            return context.Customer.Where(c => c.CustomerID == 1).ToList();
+            return context.Customer.ToList();
+        }
+
+        [HttpPost("[action]")]
+        public int register([FromBody]Customer customer)
+        {
+            context.Customer.Add(customer);
+            context.SaveChanges();
+            return 1;
         }
 
         [HttpGet("[action]")]

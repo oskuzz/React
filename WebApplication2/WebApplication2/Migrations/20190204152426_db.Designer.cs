@@ -9,8 +9,8 @@ using WebApplication2.Data;
 namespace WebApplication2.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190201135716_seed2")]
-    partial class seed2
+    [Migration("20190204152426_db")]
+    partial class db
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,7 +34,7 @@ namespace WebApplication2.Migrations
 
                     b.Property<string>("Password");
 
-                    b.Property<string>("ProneNumber");
+                    b.Property<string>("PhoneNumber");
 
                     b.Property<string>("UserName");
 
@@ -50,7 +50,7 @@ namespace WebApplication2.Migrations
                             FirstName = "asd",
                             LastName = "asd",
                             Password = "asdasd",
-                            ProneNumber = "123456789",
+                            PhoneNumber = "123456789",
                             UserName = "asd"
                         });
                 });

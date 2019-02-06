@@ -28,8 +28,10 @@ namespace WebApplication2.Data
             modelBuilder.Entity<Customer>()
                 .HasKey(c => c.CustomerID);
             modelBuilder.Entity<Customer>()
-                .HasData(new Customer { CustomerID=1, FirstName="asd", LastName="asd", Email="asd@asd.asd", ProneNumber="123456789", UserName="asd", Password="asdasd" });
-            
+                .HasData(new Customer { CustomerID = 1, FirstName="asd", LastName="asd", Email="asd@asd.asd", PhoneNumber="123456789", UserName="asd", Password="asdasd" });
+            modelBuilder.Entity<Customer>()
+               .HasData(new Customer { CustomerID = 2, FirstName = "asdf", LastName = "asdf", Email = "asdf@asd.asd", PhoneNumber = "123456789", UserName = "asdf", Password = "asdasdasd" });
+
         }
     }
 }

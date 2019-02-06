@@ -9,8 +9,8 @@ namespace WebApplication2.Migrations
             migrationBuilder.InsertData(
                 schema: "Service",
                 table: "Customer",
-                columns: new[] { "CustomerID", "Email", "FirstName", "LastName", "Password", "ProneNumber", "UserName" },
-                values: new object[] { 1, "asd@asd.asd", "asd", "asd", "asdasd", "123456789", "asd" });
+                columns: new[] { "CustomerID", "Email", "FirstName", "LastName", "Password", "PhoneNumber", "UserName" },
+                values: new object[] { 2, "asdf@asd.asd", "asdf", "asdf", "asdasdasd", "123456789", "asdf" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -19,7 +19,7 @@ namespace WebApplication2.Migrations
                 schema: "Service",
                 table: "Customer",
                 keyColumn: "CustomerID",
-                keyValue: 1);
+                keyValue: 2);
         }
     }
 }
